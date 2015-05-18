@@ -81,15 +81,9 @@ function vercomp () {
 #    echo 0
 }
 
-
-rtn=$(vercomp ${version} 1.2)
 # URL to download from
-if [ "$rtn" == "1" ]
-then
-    download="http://golang.org/dl/go${version}.${platform}-${arch}${extra}.tar.gz"
-else
-    download="https://go.googlecode.com/files/go${version}.${platform}-${arch}${extra}.tar.gz"
-fi
+download="https://storage.googleapis.com/golang/go${version}.${platform}-${arch}${extra}.tar.gz"
+
 # Can't get too clever here
 set +e
 
